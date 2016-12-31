@@ -19,3 +19,5 @@ The code does the following:
 6) Make the final POST to Twitch and get the oAuth token back in the Json response.
 
 One thing I noticed is that sometimes the WebBrowser control will show an error (see CookieError.png) you can just ignore this and choose Yes to continue running scripts.
+
+Please Note, I have included a client secret in the code, this secret is no longer valid and so the sample will not work as it stands. To fix this you need to create a new Twitch Developer Application and update the values at the top of program.cs. You'll also need to amend the URL in MainWindow.xaml.cs
