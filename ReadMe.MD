@@ -17,3 +17,5 @@ The code does the following:
 4) On a successful attempt your web server should then get a callback
 5) The callback for Authorization Code Flow contains a code
 6) Make the final POST to Twitch and get the oAuth token back in the Json response.
+
+One thing I noticed is that sometimes the WebBrowser control will show an error (see CookieError.png) you can just ignore this and choose Yes to continue running scripts.
