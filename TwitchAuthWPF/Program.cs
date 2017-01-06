@@ -19,6 +19,7 @@ namespace TwitchAuthWPF
         private const string twitchClientId = "t6ma91fizbc7hudx6n5z60u9vb9h42";
         private const string twitchClientSecret = "uuktleakynfo887oxt8a8h6vzfnc1s";
         private const string twitchRedirectUri = "http://localhost:8080/twitch/callback";
+        private const string twichScope = "channel_read";
 
         public void DoWork()
         {
@@ -34,6 +35,7 @@ namespace TwitchAuthWPF
             }
             catch(Exception ex)
             {
+                this.main.textBoxContent = string.Format("Ex: {0}", ex.Message);
                 throw ex;
             }
 
@@ -112,6 +114,7 @@ namespace TwitchAuthWPF
             catch (Exception ex)
             {
                 //We should log any exception here but I am just going to supress them for this sample
+                this.main.textBoxContent = string.Format("Ex: {0}", ex.Message);
                 throw ex;
             }
             finally
@@ -140,6 +143,7 @@ namespace TwitchAuthWPF
             catch (Exception ex)
             {
                 //We should log any exception here but I am just going to supress them for this sample
+                this.main.textBoxContent = string.Format("Ex: {0}", ex.Message);
                 throw ex;
             }
             finally
@@ -161,6 +165,7 @@ namespace TwitchAuthWPF
             }
             catch(Exception ex)
             {
+                this.main.textBoxContent = string.Format("Ex: {0}", ex.Message);
                 throw ex;
             }
             
