@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.Net; //required for HttpListenerRequest
 using System.IO; //required for Streaming requests and responses
 using System.Web; //required for HttpUtility - don't forget to add a Reference
-using Newtonsoft.Json; 
+using Newtonsoft.Json;
+using System.Configuration;
 
 namespace TwitchAuthWPF
 {
@@ -16,8 +17,8 @@ namespace TwitchAuthWPF
         //Configuration from your Twitch Application replace these with the values from
         //Twitch, Settings, Connections, Developer Application (scroll down)
 
-        private const string twitchClientId = "t6ma91fizbc7hudx6n5z60u9vb9h42";
-        private const string twitchClientSecret = "34d5yql8t8tsxu7lcx6qha35n7dvfp";
+        private string twitchClientId = ConfigurationManager.AppSettings["twitchClientId"];
+        private string twitchClientSecret = ConfigurationManager.AppSettings["twitchClientSecret"];
         private const string twitchRedirectUri = "http://localhost:8080/twitch/callback";
         private const string twichScope = "channel_read";
 
