@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Configuration;
+
 namespace TwitchAuthWPF
 {
     /// <summary>
@@ -42,8 +44,11 @@ namespace TwitchAuthWPF
             //NativeMethods.SuppressCookiePersistence();
             //When the button is clicked send the user to the Twitch Auth url as documented here:
             //https://dev.twitch.tv/docs/v5/guides/authentication/
+            
+            //Get the app ID from App.config
 
-            myBrowser.Navigate("https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=t6ma91fizbc7hudx6n5z60u9vb9h42&redirect_uri=http://localhost:8080/twitch/callback&scope=channel_read&state=123456");
+            string url = String.Format("https://id.twitch.tv/oauth2/authorize?response_type=code&client_id={0}&redirect_uri=http://localhost:8080/twitch/callback&scope=channel_read&state=123456", ConfigurationManager.AppSettings["twitchClientId"]);
+            myBrowser.Navigate(url);
         }
 
         //Code to handle updating the TextBox Text data

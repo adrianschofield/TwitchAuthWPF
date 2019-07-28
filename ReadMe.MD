@@ -1,5 +1,8 @@
 #TwitchAuthWPF
 
+**Please NOTE you should note use this code in any kind of Production application. Having a local app running a web server is a recipe for disaster from a security perspective.
+I wrote this to prove to myself I understood how the oAuth flow was working. Hopefully it'll help someone else understand it too**
+
 This is a sample project to show how to get a Twitch oAuth access token using WPF and C#
 
 The sample uses Newtonsoft JSON to handle JSON data and so you may need to install it. Install using NuGet like this:
@@ -22,7 +25,20 @@ The code does the following:
 
 One thing I noticed is that sometimes the WebBrowser control will show an error (see CookieError.png) you can just ignore this and choose Yes to continue running scripts.
 
-Please Note, I have included a client secret in the code, this secret is no longer valid and so the sample will not work as it stands. To fix this you need to create a new Twitch Developer Application and update the values at the top of program.cs. You'll also need to amend the URL in MainWindow.xaml.cs
+Please Note, I have moved client secret and client Id into App.Config so the sample will not work as it stands. To fix this you need to create a new Twitch Developer Application and update the values at the top of program.cs and create an App.Config file.
+
+Sample App.config:
+
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+    </startup>
+  <appSettings>
+    <add key="twitchClientSecret" value="CLIENT_SECRET_HERE"/>
+    <add key="twitchClientId" value="CLIENT_ID_HERE"/>
+  </appSettings>
+</configuration>
 
 Licenses
 
