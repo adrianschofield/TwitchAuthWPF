@@ -37,13 +37,13 @@ namespace TwitchAuthWPF
         private void button_Click(object sender, RoutedEventArgs e)
         {
             //By Default the WebBrowser control manages cookies, while debugging this is a real problem as
-            //you don;t go through the complete end to end user experience so this call suppresses them
+            //you don't go through the complete end to end user experience so this call suppresses them
             //Do not use unless debugging
             //NativeMethods.SuppressCookiePersistence();
             //When the button is clicked send the user to the Twitch Auth url as documented here:
             //https://dev.twitch.tv/docs/v5/guides/authentication/
 
-            myBrowser.Navigate("https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=t6ma91fizbc7hudx6n5z60u9vb9h42&redirect_uri=http://localhost:8080/twitch/callback&scope=channel_read&state=123456");
+            myBrowser.Navigate("https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=t6ma91fizbc7hudx6n5z60u9vb9h42&redirect_uri=http://localhost:8080/twitch/callback&scope=channel_read&state=123456");
         }
 
         //Code to handle updating the TextBox Text data

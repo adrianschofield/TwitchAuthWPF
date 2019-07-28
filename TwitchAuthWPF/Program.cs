@@ -14,10 +14,10 @@ namespace TwitchAuthWPF
     {
         public MainWindow main;
         //Configuration from your Twitch Application replace these with the values from
-        //Twitch, Settings, Connections, Developer Applicatioon (scroll down)
+        //Twitch, Settings, Connections, Developer Application (scroll down)
 
         private const string twitchClientId = "t6ma91fizbc7hudx6n5z60u9vb9h42";
-        private const string twitchClientSecret = "uuktleakynfo887oxt8a8h6vzfnc1s";
+        private const string twitchClientSecret = "34d5yql8t8tsxu7lcx6qha35n7dvfp";
         private const string twitchRedirectUri = "http://localhost:8080/twitch/callback";
         private const string twichScope = "channel_read";
 
@@ -69,7 +69,7 @@ namespace TwitchAuthWPF
             postDataDictionary.Add("client_secret", twitchClientSecret);
             postDataDictionary.Add("grant_type", "authorization_code");
             postDataDictionary.Add("redirect_uri", twitchRedirectUri);
-            postDataDictionary.Add("state", "123456");
+            //postDataDictionary.Add("state", "123456");
             postDataDictionary.Add("code", code);
 
             string postData = "";
@@ -86,7 +86,7 @@ namespace TwitchAuthWPF
             //OK set up our request for the final step in the Authorization Code Flow
             //This is the destination URI as described in https://dev.twitch.tv/docs/v5/guides/authentication/
 
-            myWebRequest = WebRequest.CreateHttp("https://api.twitch.tv/kraken/oauth2/token");
+            myWebRequest = WebRequest.CreateHttp("https://id.twitch.tv/oauth2/token");
 
             //This request is a POST with the required content type
 
